@@ -1,83 +1,734 @@
-<h1 align="center">Hi 👋, I'm Ayush Nautiyal</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayush Nautiyal — Backend → AI Agent Engineer</title>
+  <meta name="description" content="Backend engineer with 3+ years shipping multi-tenant SaaS and payment systems. Now building helpdesk-ai, an open-source multi-tenant AI support agent." />
 
-<h3 align="center">Backend → AI Agent Engineer · Building <code>helpdesk-ai</code> in public</h3>
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Ayush Nautiyal — Backend → AI Agent Engineer" />
+  <meta property="og:description" content="Building helpdesk-ai in public. Open-source multi-tenant AI support agent." />
+  <meta property="og:type" content="website" />
 
-<p align="center">
-  <a href="https://x.com/Avicula11" target="_blank"><img src="https://img.shields.io/twitter/follow/Avicula11?logo=twitter&style=for-the-badge&color=1DA1F2" alt="Twitter Follow" /></a>
-  <a href="https://linkedin.com/in/ayush-nautiyal-947266177" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" /></a>
-  <img src="https://komarev.com/ghpvc/?username=ayushnau&label=Profile%20Views&color=0e75b6&style=for-the-badge" alt="Profile views" />
-</p>
+  <!-- Fonts: editorial serif display + clean mono + refined sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
----
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --bg-alt: #ebe6dc;
+      --ink: #1a1714;
+      --ink-soft: #4a4037;
+      --ink-muted: #7a6e61;
+      --accent: #c7411f;
+      --accent-dim: #a8361a;
+      --line: #d9d2c4;
+      --yellow: #e8c547;
+    }
 
-### About
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-I'm a software engineer with **3+ years of production experience** shipping scalable backend systems — multi-tenant SaaS platforms, payment integrations processing ₹1 Cr+ monthly, and cron-based orchestration handling 10k+ tasks/day. I work primarily in **TypeScript, Node.js, and React**, with deep experience in PostgreSQL, Redis, and AWS.
+    html { scroll-behavior: smooth; }
 
-**Right now I'm transitioning into AI Agent Engineering** — applying my backend and multi-tenancy chops to building reliable, production-grade LLM systems. I'm doing this in public.
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
----
+    /* Subtle paper texture via CSS */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(199, 65, 31, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(26, 23, 20, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-### 🚧 Currently Building: `helpdesk-ai`
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
 
-An **open-source, multi-tenant AI support agent** — think self-hostable Intercom Fin / Sierra for SaaS companies. Built to explore production-grade agent engineering concepts end-to-end.
+    /* === NAV === */
+    nav {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: rgba(244, 241, 234, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
 
-**Stack:** TypeScript · Next.js · Mastra · Vercel AI SDK · PostgreSQL + pgvector · Upstash Redis · Langfuse · Gemini / Claude / Llama
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-**What it tackles:**
-- 🔁 Agent loops with tool-calling and structured outputs
-- 🧠 Layered memory systems (working, short-term, semantic)
-- 🏢 Per-tenant prompts, tools, and knowledge isolation
-- 📊 Evaluation harness with golden datasets + LLM-as-judge
-- 🔍 Full observability with trace hierarchies and cost attribution
-- 🛡️ Prompt injection defense and human handoff patterns
+    .nav-mark {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
 
-> Follow the build on [Twitter/X](https://x.com/Avicula11) · Star the repo when it drops
+    .nav-mark span { color: var(--accent); }
 
----
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-### 🛠️ What I Work With
+    .nav-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-**Languages:** TypeScript · JavaScript · Python (learning) · C++  
-**Frontend:** React · Next.js · Remix · TailwindCSS · D3.js · shadcn/ui  
-**Backend:** Node.js · Express · GraphQL · PHP/Laravel · REST APIs  
-**AI/LLM:** Anthropic SDK · Vercel AI SDK · Mastra · Ollama · RAG with pgvector  
-**Databases:** PostgreSQL · MongoDB · MySQL · Redis · Typesense  
-**Infra:** Docker · Kubernetes · AWS (EC2, ECS, S3, Lambda) · Turborepo · Vercel · CI/CD  
-**Observability:** Sentry · Langfuse · Grafana
+    .nav-links a:hover { color: var(--accent); }
 
----
+    /* === HERO === */
+    .hero {
+      padding: 80px 0 120px;
+      position: relative;
+    }
 
-### 💼 Experience Highlights
+    .hero-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--ink-muted);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-- **SDE @ Petpooja** — Built scalable multi-tenant ordering widget (Shopify-style) serving multiple merchants from a single codebase. Integrated 4+ payment gateways handling ₹1 Cr+ monthly transactions. Designed cron orchestration for 10k+ daily tasks.
-- **Junior SDE @ Betalectic** — Shipped real-time currency exchange system for 70+ currencies (Wiredup) and D3-powered enterprise analytics platform (Chick-fil-A) processing 1M+ data points.
-- **Open Source Contributor** — Redesigned monorepo with TurboRepo + changesets-based release pipeline. Rewarded $1,200 across three contributions.
-- **Personal Project — [Minihog](https://github.com/ayushnau)** — Self-hosted event analytics platform (Mixpanel alternative) with batch-processing SDK that reduced client-side API calls by 90%.
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
 
----
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
 
-### ✍️ Writing in Public
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      margin-bottom: 40px;
+      font-variation-settings: "opsz" 144;
+    }
 
-Documenting the backend → AI engineering transition, one concept at a time.  
-*(First technical post dropping soon — follow [@Avicula11](https://x.com/Avicula11) for the link.)*
+    h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
 
----
+    .hero-sub {
+      font-size: 20px;
+      max-width: 680px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-bottom: 48px;
+    }
 
-### 📫 Reach Me
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
 
-- **Email:** ayushnautiyaldevelopr@gmail.com
-- **Twitter/X:** [@Avicula11](https://x.com/Avicula11)
-- **LinkedIn:** [ayush-nautiyal](https://linkedin.com/in/ayush-nautiyal-947266177)
+    .hero-meta div strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
 
-**Open to:** Remote AI Agent Engineer / Applied AI Engineer roles
+    /* === SECTION BASE === */
+    section {
+      padding: 100px 0;
+      border-top: 1px solid var(--line);
+    }
 
----
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+    }
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ayushnau&show_icons=true&locale=en&theme=tokyonight&hide_border=true" alt="GitHub Stats" />
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ayushnau&show_icons=true&locale=en&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ayushnau&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-</p>
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 48px;
+      max-width: 900px;
+    }
+
+    /* === NOW/CURRENT PROJECT === */
+    .now {
+      background: var(--ink);
+      color: var(--bg);
+      border-radius: 4px;
+      padding: 60px;
+      margin-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .now::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.15;
+      filter: blur(40px);
+    }
+
+    .now-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--yellow);
+      margin-bottom: 24px;
+    }
+
+    .now h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .now h3 code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      background: rgba(232, 197, 71, 0.15);
+      color: var(--yellow);
+      padding: 2px 12px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .now-desc {
+      font-size: 17px;
+      color: rgba(244, 241, 234, 0.8);
+      max-width: 640px;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .now-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 6px 12px;
+      border: 1px solid rgba(244, 241, 234, 0.2);
+      border-radius: 4px;
+      color: rgba(244, 241, 234, 0.85);
+    }
+
+    .now-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    .btn-primary:hover { background: #f0d05a; transform: translateY(-2px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--bg);
+      border: 1px solid rgba(244, 241, 234, 0.3);
+    }
+
+    .btn-ghost:hover { border-color: var(--bg); }
+
+    /* === PROJECTS GRID === */
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .project {
+      background: var(--bg);
+      padding: 40px;
+      transition: background 0.2s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .project:hover { background: var(--bg-alt); }
+
+    .project-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--ink-muted);
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .project h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .project-stats {
+      display: flex;
+      gap: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+
+    .project-stats strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* === EXPERIENCE === */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--ink-muted);
+      padding-top: 4px;
+    }
+
+    .exp-role {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .exp-company {
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .exp-desc {
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* === WRITING === */
+    .writing-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .writing-item {
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      gap: 32px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+      text-decoration: none;
+      color: var(--ink);
+      transition: padding 0.2s;
+    }
+
+    .writing-item:hover {
+      padding-left: 16px;
+    }
+
+    .writing-item:hover .writing-title {
+      color: var(--accent);
+    }
+
+    .writing-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+
+    .writing-title {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
+    }
+
+    .writing-arrow {
+      font-size: 20px;
+      color: var(--ink-muted);
+    }
+
+    .writing-placeholder {
+      padding: 32px;
+      background: var(--bg-alt);
+      border: 1px dashed var(--line);
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--ink-muted);
+      text-align: center;
+    }
+
+    /* === CONTACT === */
+    .contact {
+      padding: 120px 0;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact h2 { margin-left: auto; margin-right: auto; }
+
+    .contact-links {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .contact-links a {
+      color: var(--ink);
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--ink);
+      transition: color 0.2s;
+    }
+
+    .contact-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* === FOOTER === */
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--ink-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav-links { gap: 16px; font-size: 13px; }
+      .hero { padding: 56px 0 80px; }
+      .hero-sub { font-size: 17px; }
+      section { padding: 64px 0; }
+      .now { padding: 36px 28px; }
+      .now h3 { font-size: 28px; }
+      .projects { grid-template-columns: 1fr; }
+      .project { padding: 28px; }
+      .exp-item { grid-template-columns: 1fr; gap: 12px; }
+      .writing-item { grid-template-columns: 1fr auto; gap: 12px; }
+      .writing-date { grid-column: 1 / -1; font-size: 11px; }
+      .contact-links { gap: 16px; flex-direction: column; align-items: center; }
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: reveal 0.8s ease-out forwards;
+    }
+
+    @keyframes reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal-1 { animation-delay: 0.1s; }
+    .reveal-2 { animation-delay: 0.2s; }
+    .reveal-3 { animation-delay: 0.3s; }
+    .reveal-4 { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="nav-mark">AN<span>.</span></div>
+      <div class="nav-links">
+        <a href="#now">Now</a>
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-label reveal reveal-1">
+        <span class="pulse"></span>
+        Delhi, India &nbsp;·&nbsp; Open to remote AI roles
+      </div>
+      <h1 class="reveal reveal-2">
+        Backend engineer<br/>
+        learning to build<br/>
+        <em>reliable agents.</em>
+      </h1>
+      <p class="hero-sub reveal reveal-3">
+        I'm Ayush Nautiyal. For the last three years I've shipped multi-tenant SaaS, payment systems, and orchestration infra. Now I'm building <code style="font-family:'JetBrains Mono',monospace;font-size:0.92em;background:var(--bg-alt);padding:1px 8px;border-radius:3px;">helpdesk-ai</code> — an open-source, multi-tenant AI support agent — to learn agent engineering the way it's actually practiced.
+      </p>
+      <div class="hero-meta reveal reveal-4">
+        <div><strong>3+ yrs</strong> · backend & systems</div>
+        <div><strong>₹1 Cr+</strong> · monthly payments shipped</div>
+        <div><strong>10k+/day</strong> · cron orchestration</div>
+        <div><strong>$1,200</strong> · open-source awards</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="now">
+    <div class="container">
+      <div class="section-label">What I'm building right now</div>
+      <div class="now">
+        <div class="now-tag">● Week 01 of 10 · In progress</div>
+        <h3><code>helpdesk-ai</code></h3>
+        <p class="now-desc">
+          An open-source, multi-tenant AI support agent. Think self-hostable alternative to Intercom Fin or Sierra. Built to explore production-grade agent engineering end-to-end: layered memory, per-tenant isolation, tool-calling, evaluation harnesses, prompt injection defense, and graceful human handoff. Documented in public, week by week.
+        </p>
+        <div class="now-stack">
+          <span class="chip">TypeScript</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">Mastra</span>
+          <span class="chip">Vercel AI SDK</span>
+          <span class="chip">pgvector</span>
+          <span class="chip">Upstash Redis</span>
+          <span class="chip">Langfuse</span>
+          <span class="chip">Gemini / Claude / Llama</span>
+        </div>
+        <div class="now-links">
+          <a class="btn btn-primary" href="https://github.com/ayushnau" target="_blank">View on GitHub →</a>
+          <a class="btn btn-ghost" href="https://x.com/Avicula11" target="_blank">Follow the build</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="section-label">Experience</div>
+      <h2>Three years of shipping systems that can't go down.</h2>
+
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-date">Aug 2024<br/>→ Present</div>
+          <div>
+            <div class="exp-role">Software Development Engineer</div>
+            <div class="exp-company">Petpooja · Remote</div>
+            <p class="exp-desc">
+              Built a scalable, multi-tenant online ordering widget — a Shopify-like platform where restaurants launch customizable storefronts from templates. Shipped React SSR with per-tenant proxy routing for SEO, reducing API response times by 70% through caching and bottleneck analysis. Integrated Stripe, Razorpay, Datacap, and Cashfree handling ₹1 Cr+ in monthly transactions, with a configurable discount engine supporting coupons, BOGO, and scheduled promotions via a cron system processing 10k+ tasks daily.
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">Jan 2023<br/>→ Jul 2024</div>
+          <div>
+            <div class="exp-role">Junior Software Engineer</div>
+            <div class="exp-company">Betalectic · Hyderabad</div>
+            <p class="exp-desc">
+              Shipped Wiredup — an international payment platform with real-time currency exchange across 70+ currencies at 99.99% data accuracy. Implemented Typesense-based vector search and a reusable component library that cut dev time 40%. Cut MTTR by 60% via Sentry-based observability. Also shipped Chick-fil-A's enterprise analytics platform with custom D3.js visualizations processing 1M+ data points in real time.
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">Jan 2024<br/>→ May 2024</div>
+          <div>
+            <div class="exp-role">Developer Experience Contributor</div>
+            <div class="exp-company">Open Source · Awarded $1,200</div>
+            <p class="exp-desc">
+              Redesigned project structure using Turborepo, enabling parallel development across packages. Shipped automated release pipelines with changesets that dropped release cycles from days to hours. Improved CLI commands to streamline project setup. Awarded for all three contributions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-label">Selected projects</div>
+      <h2>Things I've built outside of work.</h2>
+
+      <div class="projects">
+        <div class="project">
+          <div class="project-meta">
+            <span>2025 → Present</span>
+            <span>PERSONAL</span>
+          </div>
+          <h3>Minihog</h3>
+          <p>Self-hostable event analytics platform. Think Mixpanel/PostHog, but open source and tiny. Monorepo with Express API, Next.js dashboard, and a published npm SDK that cuts client-side API calls by 90% through batching and retries.</p>
+          <div class="project-stats">
+            <div><strong>90%</strong> fewer API calls</div>
+            <div><strong>TypeScript</strong> · Next · Postgres</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-meta">
+            <span>2025 → Present</span>
+            <span>IN PROGRESS</span>
+          </div>
+          <h3>helpdesk-ai</h3>
+          <p>The project currently above. Open-source multi-tenant AI support agent. Tool-calling, layered memory, golden-dataset evals, prompt injection defense. Documented week by week.</p>
+          <div class="project-stats">
+            <div><strong>Week 01</strong> / 10</div>
+            <div><strong>TS</strong> · Mastra · pgvector</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="writing">
+    <div class="container">
+      <div class="section-label">Writing</div>
+      <h2>Notes from the agent-engineering transition.</h2>
+
+      <div class="writing-list">
+        <!-- When you publish, replace this placeholder with writing-item anchors.
+             Format for a real post:
+
+        <a href="/blog/agent-loops.html" class="writing-item">
+          <div class="writing-date">2026 · 04</div>
+          <div class="writing-title">How tool-calling actually works</div>
+          <div class="writing-arrow">→</div>
+        </a>
+        -->
+        <div class="writing-placeholder">
+          First post dropping soon. Follow <a href="https://x.com/Avicula11" style="color:var(--accent);">@Avicula11</a> for the link.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-label">Get in touch</div>
+      <h2>Open to remote AI Agent Engineer roles.</h2>
+      <p style="color: var(--ink-soft); max-width: 520px; margin: 0 auto 8px; font-size: 16px;">
+        Hiring for a team building agents in production? I'd love to hear about it.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:ayushnautiyaldevelopr@gmail.com">Email</a>
+        <a href="https://x.com/Avicula11" target="_blank">Twitter</a>
+        <a href="https://linkedin.com/in/ayush-nautiyal-947266177" target="_blank">LinkedIn</a>
+        <a href="https://github.com/ayushnau" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <div>© 2026 Ayush Nautiyal</div>
+      <div>Built in a day with HTML + CSS. Hosted on GitHub Pages.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
