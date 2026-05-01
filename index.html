@@ -412,6 +412,29 @@
       line-height: 1.65;
     }
 
+    .exp-desc a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .exp-desc a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .exp-company a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .exp-company a:hover {
+      border-color: var(--accent);
+    }
+
     /* === WRITING === */
     .writing-list {
       display: flex;
@@ -618,7 +641,7 @@
           <div class="exp-date">Aug 2024<br/>→ Present</div>
           <div>
             <div class="exp-role">Software Development Engineer</div>
-            <div class="exp-company">Petpooja · Remote</div>
+            <div class="exp-company"><a href="https://www.petpooja.com" target="_blank">Petpooja</a> · Remote</div>
             <p class="exp-desc">
               Built a scalable, multi-tenant online ordering widget — a Shopify-like platform where restaurants launch customizable storefronts from templates. Shipped React SSR with per-tenant proxy routing for SEO, reducing API response times by 70% through caching and bottleneck analysis. Integrated Stripe, Razorpay, Datacap, and Cashfree handling ₹1 Cr+ in monthly transactions, with a configurable discount engine supporting coupons, BOGO, and scheduled promotions via a cron system processing 10k+ tasks daily.
             </p>
@@ -631,7 +654,7 @@
             <div class="exp-role">Junior Software Engineer</div>
             <div class="exp-company">Betalectic · Hyderabad</div>
             <p class="exp-desc">
-              Shipped Wiredup — an international Risk Assesment platform with real-time currency exchange across 70+ currencies at 99.99% data accuracy. Implemented Typesense-based vector search and a reusable component library that cut dev time 40%. Cut MTTR by 60% via Sentry-based observability. Also shipped Chick-fil-A's enterprise analytics platform with custom D3.js visualizations processing 1M+ data points in real time.
+              Shipped <a href="https://wiredup.in" target="_blank">Wiredup</a> — an international risk assessment platform with real-time currency exchange across 70+ currencies at 99.99% data accuracy. Implemented Typesense-based vector search and a reusable component library that cut dev time 40%. Cut MTTR by 60% via Sentry-based observability. Also shipped <a href="https://www.chick-fil-a.com" target="_blank">Chick-fil-A's</a> enterprise analytics platform with custom D3.js visualizations processing 1M+ data points in real time.
             </p>
           </div>
         </div>
@@ -640,9 +663,9 @@
           <div class="exp-date">Jan 2024<br/>→ May 2024</div>
           <div>
             <div class="exp-role">Developer Experience Contributor</div>
-            <div class="exp-company">Open Source · Awarded $1,200</div>
+            <div class="exp-company"><a href="https://www.asyncapi.com" target="_blank">AsyncAPI</a> · Open Source · Awarded $1,200</div>
             <p class="exp-desc">
-              Redesigned project structure using Turborepo, enabling parallel development across packages. Shipped automated release pipelines with changesets that dropped release cycles from days to hours. Improved CLI commands to streamline project setup. Awarded for all three contributions.
+              Redesigned <a href="https://github.com/asyncapi/parser-js/issues/963" target="_blank">package architecture</a> of @asyncapi/parser-js (Linux Foundation, used at PayPal, Salesforce, Slack) using Turborepo, enabling parallel development across packages. Shipped <a href="https://github.com/asyncapi/generator/issues/1044" target="_blank">automated release pipelines</a> with changesets that dropped release cycles from days to hours. Improved <a href="https://github.com/asyncapi/cli/issues/683" target="_blank">CLI project scaffolding</a> to streamline developer onboarding. Awarded $400 for each contribution.
             </p>
           </div>
         </div>
